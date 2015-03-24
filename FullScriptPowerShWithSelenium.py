@@ -22,23 +22,22 @@ RAMPRNT = str("RAM: " + str(RAMTOTAL) + "GB")
 CPUPRNT = str("CPU: " + CPUINFO.name)
 OSPRNT = str("OS: " + OSINFO.caption)
 
+os.system('cls')
+
 def ALLTHESPECS():
 	MODELPRNT = str("Model: " + MANUFACTURER + " " + MODEL)
 	HDDPRNT = str("HDD: " + str(HDDTOTAL) + "GB")
 	RAMPRNT = str("RAM: " + str(RAMTOTAL) + "GB")
 	CPUPRNT = str("CPU: " + CPUINFO.name)
 	OSPRNT = str("OS: " + OSINFO.caption)
+	print MODELPRNT
+	print "\r"
+	print HDDPRNT
+	print RAMPRNT
+	print CPUPRNT
+	print OSPRNT
 
-os.system('cls')
-
-print ALLTHESPECS()
-print "\r"
-print MODELPRNT
-print "\r"
-print HDDPRNT
-print RAMPRNT
-print CPUPRNT
-print OSPRNT
+ALLTHESPECS()
 
 with open('selenium_header.txt','r') as a, open('selenium_body_repeated.txt','r') as b, open('selenium_footer.txt','r') as c:
     
@@ -66,17 +65,11 @@ for line in listinginfo:
 	ram_capacity = line[2]
 	cpu_specs = line[3]
 	os_type = line[4]
-	final_html += str(body_repeat.replace('MAKEMANU',model_numba).replace('MODELNAMENUMBER',model_numba).replace('POSTINGTITLE',hdd_capacity))
-"""
-full_sku = "${LOADID}-${STORAGE}-${INITIALS}-${SKUZ}"
-noteone = "${"
-notetwo = "}"
-"""
+	final_html += str(body_repeat.replace('POSTINGBODY',model_numba + "\r" + hdd_capacity + "\r" + ram_capacity + "\r" + cpu_specs + "\r" + os_type))
 	
 final_html += html_footer
     
 with open('Final_Selenium_Output','w+') as f:
     f.write(final_html)
-	
 	
 print('DONE.')

@@ -1,28 +1,83 @@
 <tbody>
 <tr>
 	<td>open</td>
-	<td>/k/aICJP77R5BGr33HQf7X8_A/BiLOP?s=edit</td>
+	<td>/</td>
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=FromEMail</td>
-	<td>EMAIL</td>
+	<td>click</td>
+	<td>css=a.sya.syp &gt; span.txt</td>
+	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=FromEMail</td>
-	<td>EMAIL</td>
+	<td>clickAndWait</td>
+	<td>css=a.sya.syp &gt; span.txt</td>
+	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=ConfirmEMail</td>
-	<td>VERIFYEMAIL</td>
+	<td>click</td>
+	<td>link=ALL COMPUTERS</td>
+	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=ConfirmEMail</td>
-	<td>VERIFYEMAIL</td>
+	<td>clickAndWait</td>
+	<td>link=ALL COMPUTERS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=post</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=post</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@name='id'])[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@name='id'])[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//article[@id='pagecontainer']/section/form/blockquote/label[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@name='id'])[20]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@name='id'])[20]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//article[@id='pagecontainer']/section/form/blockquote/label[20]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=n</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=n</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=label</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>

@@ -1,28 +1,95 @@
-<tbody>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://minneapolis.craigslist.org/" />
+<title>add to script craigslist</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">selenium_body_repeated</td></tr>
+</thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/k/aICJP77R5BGr33HQf7X8_A/BiLOP?s=edit</td>
+	<td>/</td>
 	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=FromEMail</td>
-	<td>EMAIL</td>
+	<td>click</td>
+	<td>css=a.sya.syp &gt; span.txt</td>
+	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=FromEMail</td>
-	<td>EMAIL</td>
+	<td>clickAndWait</td>
+	<td>css=a.sya.syp &gt; span.txt</td>
+	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=ConfirmEMail</td>
-	<td>VERIFYEMAIL</td>
+	<td>click</td>
+	<td>link=ALL COMPUTERS</td>
+	<td></td>
 </tr>
 <tr>
-	<td>type</td>
-	<td>id=ConfirmEMail</td>
-	<td>VERIFYEMAIL</td>
+	<td>clickAndWait</td>
+	<td>link=ALL COMPUTERS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=post</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=post</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@name='id'])[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@name='id'])[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//article[@id='pagecontainer']/section/form/blockquote/label[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@name='id'])[20]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@name='id'])[20]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//article[@id='pagecontainer']/section/form/blockquote/label[20]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=n</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=n</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=label</td>
+	<td></td>
 </tr>
 <tr>
 	<td>click</td>
@@ -67,12 +134,12 @@
 <tr>
 	<td>type</td>
 	<td>id=PostingTitle</td>
-	<td>HDD: 1000GB</td>
+	<td>POSTINGTITLE</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=PostingTitle</td>
-	<td>HDD: 1000GB</td>
+	<td>POSTINGTITLE</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -107,12 +174,12 @@
 <tr>
 	<td>type</td>
 	<td>id=PostingBody</td>
-	<td>POSTINGBODY</td>
+	<td>Model: Acer Aspire TC-105HDD: 1000GBRAM: 8GBCPU: AMD A8-6500 APU with Radeon(tm) HD Graphics    OS: Microsoft Windows 8.1</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=PostingBody</td>
-	<td>POSTINGBODY</td>
+	<td>Model: Acer Aspire TC-105HDD: 1000GBRAM: 8GBCPU: AMD A8-6500 APU with Radeon(tm) HD Graphics    OS: Microsoft Windows 8.1</td>
 </tr>
 <tr>
 	<td>select</td>
@@ -127,22 +194,22 @@
 <tr>
 	<td>type</td>
 	<td>id=sale_manufacturer</td>
-	<td>Model: Acer Aspire TC-105</td>
+	<td>MAKEMANU</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=sale_manufacturer</td>
-	<td>Model: Acer Aspire TC-105</td>
+	<td>MAKEMANU</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=sale_model</td>
-	<td>Model: Acer Aspire TC-105</td>
+	<td>MODELNAMENUMBER</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=sale_model</td>
-	<td>Model: Acer Aspire TC-105</td>
+	<td>MODELNAMENUMBER</td>
 </tr>
 <tr>
 	<td>type</td>
