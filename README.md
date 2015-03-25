@@ -1,12 +1,21 @@
 # Laptop_Sells_Itself
-Preface: Implement the following into BLDZR/Hardware Tester. After Hardware testing checks out, end-user will be prompted for quality verification.
+The general idea to this script is a further addition to my hardware tester. The hardware tester does exactly that. Test the absolute basic integrity of a Windows machine (Keyboard, speakers, WiFi, Battery, etc...)
 
-Script to collect specs then generate CL/Ebay/Amazon listing.
+From here, since I'm in an Ecommerce setting, I've decided to automate the selling/listing process each of the machines I test undergoes. This is accomplished through the "Laptop_Sells_Iteself" script.
 
-The various commands for gathering basic consumer specifications of the
-current machine. This info is then appended to a text file (hardcoded as
-welp.txt) on the current users Desktop.
+I've integrated native Windows Powershell commands into a more universal language, Python. The powershell commands gather the specifications of the host computer, assigns them to a series of variables. These variables are tucked into an array which replaces keywords (more variables) of a Selenium .HTML script. Producing an automated Selenium script that will [eventually] post, or filter, these specifications and post listings on Amazon/Ebay/Craigslist. I've started with craigslist because it doesn't have an .API and requires more hardcoding to get the job done. In a nutshell, if I can automate craigslist then I can automate an Ebay or Amazon listing.
 
-For future reference: Create a selenium script that posts to CraigsList, Amazon, and/or Ebay using the generated text to fill in the descriptions, where necessary. This process will be similar to your Auto_Amazon_Lister repository. Otherwise simply use Make/Model to find the item on Amazon and add to their preconfigured product catalog.
+The scripting process goes something like this.
 
-Epilogue: After the listing has been generated (and/or before) it should be cross referenced with "master list file". If it matches up then the quantity is simply 1 upped. This only really applies to Amazon where all listings (Quality, Store, supplier) for the same item are allocated and terms of service might be "breached" if multiple listings are created for the same item. As opposed to one listing, one supplier with multiple quantities. Consider implementing this feature later one and working on the Ebay, Craigslist side of things for now.
+1: run on target computer. CHECK.
+2: output log file. Not implemented.
+3: run on a different target computer. CHECK.
+4: append log file. Not implemented.
+5: python consults log file. Not implemented.
+6: python generates variables from log file. CHECK.
+7: python replaces strings within slenium template with variables. CHECK.
+8: selenium html is generated. CHECK.
+9: automatically compile a python script through selenium webdrive. Not implemented.
+10: define aforementioned .py scripts into their respective functions. CHECK (1/4).
+11: At end of functions, construct a "master" .exe using Py2Exe. CHECK.
+12: Execute master .exe file. CHECK.
