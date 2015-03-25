@@ -15,7 +15,7 @@ The scripting process goes something like this.
 6: python generates variables from log file. CHECK.<br>
 7: python replaces strings within slenium template with variables. CHECK.<br>
 8: selenium html is generated. CHECK.<br>
-9: automatically compile a python script through selenium webdrive. Not implemented.<br>
+9: automatically compile a python script through selenium webdriver. Not implemented.<br>
 10: define aforementioned .py scripts into their respective functions. CHECK (1/4).<br>
 11: At end of functions, construct a "master" .exe using Py2Exe. CHECK.<br>
 12: Execute master .exe file. CHECK.
