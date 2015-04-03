@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="selenium.base" href="http://minneapolis.craigslist.org/" />
+<link rel="selenium.base" href="https://post.craigslist.org" />
 <title>add to script craigslist</title>
 </head>
 <body>
@@ -13,42 +13,7 @@
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=a.sya.syp &gt; span.txt</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=a.sya.syp &gt; span.txt</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=ALL COMPUTERS</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=ALL COMPUTERS</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=post</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=post</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//input[@name='id'])[6]</td>
+	<td>/k/oo587T_a5BGTRda2EPZ1hw/9nJrr?s=type</td>
 	<td></td>
 </tr>
 <tr>
@@ -58,12 +23,7 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//article[@id='pagecontainer']/section/form/blockquote/label[6]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//input[@name='id'])[20]</td>
+	<td>xpath=(//input[@name='id'])[6]</td>
 	<td></td>
 </tr>
 <tr>
@@ -73,12 +33,7 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//article[@id='pagecontainer']/section/form/blockquote/label[20]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>name=n</td>
+	<td>xpath=(//input[@name='id'])[20]</td>
 	<td></td>
 </tr>
 <tr>
@@ -88,7 +43,7 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=label</td>
+	<td>name=n</td>
 	<td></td>
 </tr>
 <tr>
@@ -114,42 +69,42 @@
 <tr>
 	<td>type</td>
 	<td>id=contact_phone</td>
-	<td>PHONE</td>
+	<td>6519876543</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=contact_phone</td>
-	<td>PHONE</td>
+	<td>6519876543</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=contact_name</td>
-	<td>CONTACTNAME</td>
+	<td>SkyGroup</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=contact_name</td>
-	<td>CONTACTNAME</td>
+	<td>SkyGroup</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=PostingTitle</td>
-	<td>POSTINGTITLE</td>
+	<td>Acer Aspire TC-105 (8.0GB RAM, 1000.0GB HDD)</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=PostingTitle</td>
-	<td>POSTINGTITLE</td>
+	<td>Acer Aspire TC-105 (8.0GB RAM, 1000.0GB HDD)</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=Ask</td>
-	<td>PRICE</td>
+	<td>1000</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=Ask</td>
-	<td>PRICE</td>
+	<td>1000</td>
 </tr>
 <tr>
 	<td>type</td>
@@ -174,12 +129,12 @@
 <tr>
 	<td>type</td>
 	<td>id=PostingBody</td>
-	<td>Model: Acer Aspire TC-105HDD: 1000GBRAM: 8GBCPU: AMD A8-6500 APU with Radeon(tm) HD Graphics    OS: Microsoft Windows 8.1</td>
+	<td>Model: Acer Aspire TC-105HDD: 1000GBRAM: 8GBCPU: AMD A8-6500 APU with Radeon(tm) HD Graphics    OS: Microsoft Windows 8</td>
 </tr>
 <tr>
 	<td>type</td>
 	<td>id=PostingBody</td>
-	<td>Model: Acer Aspire TC-105HDD: 1000GBRAM: 8GBCPU: AMD A8-6500 APU with Radeon(tm) HD Graphics    OS: Microsoft Windows 8.1</td>
+	<td>Model: Acer Aspire TC-105HDD: 1000GBRAM: 8GBCPU: AMD A8-6500 APU with Radeon(tm) HD Graphics    OS: Microsoft Windows 8</td>
 </tr>
 <tr>
 	<td>select</td>

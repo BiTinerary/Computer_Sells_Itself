@@ -1,42 +1,7 @@
 <tbody>
 <tr>
 	<td>open</td>
-	<td>/</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>css=a.sya.syp &gt; span.txt</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>css=a.sya.syp &gt; span.txt</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=ALL COMPUTERS</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=ALL COMPUTERS</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>link=post</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=post</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//input[@name='id'])[6]</td>
+	<td>/k/oo587T_a5BGTRda2EPZ1hw/9nJrr?s=type</td>
 	<td></td>
 </tr>
 <tr>
@@ -46,12 +11,7 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//article[@id='pagecontainer']/section/form/blockquote/label[6]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>xpath=(//input[@name='id'])[20]</td>
+	<td>xpath=(//input[@name='id'])[6]</td>
 	<td></td>
 </tr>
 <tr>
@@ -61,12 +21,7 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>//article[@id='pagecontainer']/section/form/blockquote/label[20]</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>name=n</td>
+	<td>xpath=(//input[@name='id'])[20]</td>
 	<td></td>
 </tr>
 <tr>
@@ -76,7 +31,7 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>css=label</td>
+	<td>name=n</td>
 	<td></td>
 </tr>
 <tr>
