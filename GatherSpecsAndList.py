@@ -44,6 +44,8 @@ def CURRENTSPECS(): # Displays the end users raw input data for verification and
 	print RAMPRNT
 	print CPUPRNT
 	print OSPRNT
+	global STORECURRENTSPECSFORMAT
+	STORECURRENTSPECSFORMAT = str(MODELPRNT + "\r" + HDDPRNT + "\r" + RAMPRNT + "\r" + CPUPRNT + "\r" + OSPRNT + "\r")
 
 def WHEREAREWELISTING():
 	CURRENTSPECS()
@@ -53,10 +55,16 @@ def WHEREAREWELISTING():
 	LOWERASKLISTINGINPUT = str(ASKLISTING.lower())
 	
 	if LOWERASKLISTINGINPUT == "amazon" or LOWERASKLISTINGINPUT == str(1):
+		with open("amazon_listing_log", "a") as amazonlistings:
+			amazonlistings.write(STORECURRENTSPECSFORMAT)
 		print("AMAZON")
 	elif LOWERASKLISTINGINPUT == "ebay" or LOWERASKLISTINGINPUT == str(2):
+		with open("ebay_listing_log", "a") as ebaylistings:
+			ebaylistings.write(STORECURRENTSPECSFORMAT)
 		print("EBAY")
 	elif LOWERASKLISTINGINPUT == "craigslist" or LOWERASKLISTINGINPUT == str(3):
+		with open("craigslist_listing_log", "a") as craigslistlistings:
+			craigslistlistings.write(STORECURRENTSPECSFORMAT)
 		CRAIGSLISTCOREFUNCTION()
 	else:
 		print(str(ASKLISTING) + " is not an option")
