@@ -20,4 +20,3 @@ The scripting process goes something like this.
 Possible implementations:<br>
 ~ Automatically compile a python script through selenium webdriver.<br>
 ~ At end of functions, construct a "master" .exe using Py2Exe.<br>
-11: Execute master .exe file. CHECK.
