@@ -8,14 +8,16 @@ I've integrated native Windows Powershell commands into a more universal languag
 The scripting process goes something like this.
 
 1: run on target computer. CHECK.<br>
-2: output log file. Not implemented.<br>
+2: output log file. CHECK.<br>
 3: run on a different target computer. CHECK.<br>
-4: append log file. Not implemented.<br>
-5: python consults log file. Not implemented.<br>
-6: python generates variables from log file. CHECK.<br>
-7: python replaces strings within slenium template with variables. CHECK.<br>
-8: selenium html is generated. CHECK.<br>
-9: automatically compile a python script through selenium webdriver. Not implemented.<br>
-10: define aforementioned .py scripts into their respective functions. CHECK (1/4).<br>
-11: At end of functions, construct a "master" .exe using Py2Exe. CHECK.<br>
-12: Execute master .exe file. CHECK.
+4: append log file. CHECK.<br>
+5: python stores log file details as a variable. NOT DONE BUT NEXT.<br>
+6: python consults this variable for each item in list. CHECK.<br>
+7: python replaces strings in selenium template with each target itieration. CHECK.<br>
+8: Each selenium template for Amazon/Ebay/CL is stored seperately from one another (as logs?)
+9: However they are also stored in one master file per script execution.
+
+Possible implementations:
+~ Automatically compile a python script through selenium webdriver.<br>
+~ At end of functions, construct a "master" .exe using Py2Exe.<br>
+11: Execute master .exe file. CHECK.
