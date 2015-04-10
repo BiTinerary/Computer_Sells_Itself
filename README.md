@@ -17,7 +17,7 @@ The scripting process goes something like this.
 8: Each selenium template for Amazon/Ebay/CL is stored seperately from one another (as logs?)<br>
 9: However they are also stored in one master file per script execution.
 
-Possible implementations:
+Possible implementations:<br>
 ~ Automatically compile a python script through selenium webdriver.<br>
 ~ At end of functions, construct a "master" .exe using Py2Exe.<br>
 11: Execute master .exe file. CHECK.
