@@ -14,7 +14,7 @@ The scripting process goes something like this.
 5: python stores log file details as a variable. NOT DONE BUT NEXT.<br>
 6: python consults this variable for each item in list. CHECK.<br>
 7: python replaces strings in selenium template with each target itieration. CHECK.<br>
-8: Each selenium template for Amazon/Ebay/CL is stored seperately from one another (as logs?)
+8: Each selenium template for Amazon/Ebay/CL is stored seperately from one another (as logs?)<br>
 9: However they are also stored in one master file per script execution.
 
 Possible implementations:
