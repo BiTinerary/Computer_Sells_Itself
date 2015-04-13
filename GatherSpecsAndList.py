@@ -27,7 +27,6 @@ global HDDSIZE
 HDDSIZE = round(HDDTOTAL) # rounding doesn't work
 
 def CURRENTSPECS(): # Displays the end users raw input data for verification and accuracy of computers specs.
-	
 	print("\r")
 	global MODELPRNT
 	MODELPRNT = str("Model: " + MANUFACTURER + " " + MODEL)
