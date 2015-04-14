@@ -7,44 +7,59 @@ SYSINFO = c.Win32_ComputerSystem()[0]
 OSINFO = c.Win32_OperatingSystem()[0]
 CPUINFO = c.Win32_Processor()[0]
 HDDINFO = c.Win32_LogicalDisk()[0]
-RAMINFO = c.Win32_PhysicalMemory()[0]
 
-"""
------------------------------------- Basic Specifications Output & Format -------------------------------------
-"""
+#------------------------------------ Basic Specifications Output & Format -------------------------------------
+
+GBasMB = int(1000000000)
 
 global MANUFACTURER
 MANUFACTURER = SYSINFO.Manufacturer
+
 global MODEL
 MODEL = SYSINFO.Model
-global RAMTOTAL
-RAMTOTAL = int(SYSINFO.TotalPhysicalMemory) / 960000000 # rounding doesn't work
-global HDDTOTAL
-HDDTOTAL = int(HDDINFO.size) / 999000000 # rounding doesn't work
-global RAMSIZE
-RAMSIZE = round(RAMTOTAL) # rounding doesn't work
-global HDDSIZE
-HDDSIZE = round(HDDTOTAL) # rounding doesn't work
+
+RAMTOTAL = int(SYSINFO.TotalPhysicalMemory) / (GBasMB)
+RAMROUNDED = math.ceil(RAMTOTAL / 2.) * 2
+global RAMSTRROUNDED
+RAMSTRROUNDED = int(RAMROUNDED)
+
+HDDTOTAL = int(HDDINFO.size) / (GBasMB) # rounding doesn't work
+HDDROUNDED = math.ceil(HDDTOTAL / 2.) * 2
+
+def ROUNDHDDTBORGB():
+	global HDDTBOUTPUT
+	if HDDROUNDED >= 1000:
+		HDDTBORGB = HDDROUNDED * .001
+		HDDTBORGBOUTPUT = "HDD: " + str(HDDTBORGB) + "TB"
+		print(HDDTBORGBOUTPUT)
+	elif HDDROUNDED < 1000:
+		HDDTBORGBOUTPUT = str("HDD: " + str(HDDROUNDED) + "GB")
+		print(HDDTBORGBOUTPUT)
+	else:
+		print("stuff")
 
 def CURRENTSPECS(): # Displays the end users raw input data for verification and accuracy of computers specs.
 	print("\r")
 	global MODELPRNT
 	MODELPRNT = str("Model: " + MANUFACTURER + " " + MODEL)
-	global HDDPRNT
-	HDDPRNT = str("HDD: " + str(HDDTOTAL) + "GB")
+	
 	global RAMPRNT
-	RAMPRNT = str("RAM: " + str(RAMTOTAL) + "GB")
+	RAMPRNT = str("RAM: " + str(RAMROUNDED) + "GB")
+	
 	global CPUPRNT
 	CPUPRNT = str("CPU: " + CPUINFO.name)
+	
 	global OSPRNT
 	OSPRNT = str("OS: " + OSINFO.caption)
+	
 	print MODELPRNT
-	print HDDPRNT
+	ROUNDHDDTBORGB()
 	print RAMPRNT
 	print CPUPRNT
 	print OSPRNT
+
 	global STORECURRENTSPECSFORMAT
-	STORECURRENTSPECSFORMAT = str(MODELPRNT + "\r" + HDDPRNT + "\r" + RAMPRNT + "\r" + CPUPRNT + "\r" + OSPRNT + "\r")
+	STORECURRENTSPECSFORMAT = str(MODELPRNT + "\r" + HDDTBORGBOUTPUT + "\r" + RAMPRNT + "\r" + CPUPRNT + "\r" + OSPRNT + "\r")
 
 def WHEREAREWELISTING():
 	CURRENTSPECS()
@@ -67,9 +82,8 @@ def WHEREAREWELISTING():
 		CRAIGSLISTCOREFUNCTION()
 	else:
 		print(str(ASKLISTING) + " is not an option")
-"""
------------------------------------- Craigslist Functions --------------------------------------------------
-"""
+
+#------------------------------------ Craigslist Functions --------------------------------------------------
 
 def CRAIGSLISTDETAILS(): # Displays the end users raw input for verification and accuracy of listing details and contact info.
 	print("\r")
@@ -137,8 +151,4 @@ def CRAIGSLISTCOREFUNCTION(): # Main processes involved in generating/posting a 
 	print('DONE.')
 	
 WHEREAREWELISTING()
-
-"""
------------------------------------- Amazon Functions --------------------------------------------------
-"""
-
+#----------------------------------- Amazon Functions --------------------------------------------------
