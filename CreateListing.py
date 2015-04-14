@@ -27,7 +27,7 @@ HDDTOTAL = int(HDDINFO.size) / (GBasMB) # rounding doesn't work
 HDDROUNDED = math.ceil(HDDTOTAL / 2.) * 2
 
 def ROUNDHDDTBORGB():
-	global HDDTBOUTPUT
+	global HDDTBORGBOUTPUT
 	if HDDROUNDED >= 1000:
 		HDDTBORGB = HDDROUNDED * .001
 		HDDTBORGBOUTPUT = "HDD: " + str(HDDTBORGB) + "TB"
