@@ -36,7 +36,7 @@ def ROUNDHDDTBORGB():
 		print(HDDPRNT)
 	elif HDDROUNDED < 1000:
 		HDDTBORGBOUTPUT = str(str(HDDROUNDED) + "GB")
-		HDDPRNt = "HDD: " + str(HDDTBORGBOUTPUT)
+		HDDPRNT = "HDD: " + str(HDDTBORGBOUTPUT)
 		print(HDDPRNT)
 	else:
 		print("!ERROR!")
