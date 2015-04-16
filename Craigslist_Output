@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://minneapolis.craigslist.org/" />
+<title>Computer Lists Itself</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Computer_Sells_Itself</td></tr>
+</thead><tbody>)
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=a.sya.syp &gt; span.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=a.sya.syp &gt; span.txt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=ALL COMPUTERS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=ALL COMPUTERS</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=post</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=post</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@name='id'])[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='id'])[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@name='id'])[20]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//input[@name='id'])[20]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=n</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=n</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=FromEMail</td>
+	<td>email.email</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=FromEMail</td>
+	<td>email.email</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ConfirmEMail</td>
+	<td>email.email</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=ConfirmEMail</td>
+	<td>email.email</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=contact_phone_ok</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=contact_phone_ok</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=contact_text_ok</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=contact_text_ok</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=contact_phone</td>
+	<td>6516516511</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=contact_phone</td>
+	<td>6516516511</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=contact_name</td>
+	<td>Zax</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=contact_name</td>
+	<td>Zax</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PostingTitle</td>
+	<td>Acer Aspire TC-105 (8GB RAM, 1.0TB HDD)</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PostingTitle</td>
+	<td>Acer Aspire TC-105 (8GB RAM, 1.0TB HDD)</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Ask</td>
+	<td>1000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Ask</td>
+	<td>1000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=GeographicArea</td>
+	<td>COUNTYLOC</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=GeographicArea</td>
+	<td>COUNTYLOC</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=wantamap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=wantamap</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=postal_code</td>
+	<td>POSTAL</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=postal_code</td>
+	<td>POSTAL</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PostingBody</td>
+	<td>Model: Acer Aspire TC-105HDD: 1.0TBRAM: 8GBCPU: AMD A8-6500 APU with Radeon(tm) HD Graphics    OS: Microsoft Windows 8</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=PostingBody</td>
+	<td>Model: Acer Aspire TC-105HDD: 1.0TBRAM: 8GBCPU: AMD A8-6500 APU with Radeon(tm) HD Graphics    OS: Microsoft Windows 8</td>
+</tr>
+</tbody></table>
+</body>
+</html>
