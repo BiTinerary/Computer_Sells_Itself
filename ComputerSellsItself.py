@@ -1,3 +1,4 @@
+import os
 import wmi
 import math
 
@@ -20,102 +21,109 @@ RAMTOTAL = int(SYSINFO.TotalPhysicalMemory) / (GBasMB)
 RAMROUNDED = math.ceil(RAMTOTAL / 2.) * 2
 RAMSTRROUNDED = int(RAMROUNDED)
 
+global HDDROUNDED
 HDDTOTAL = int(HDDINFO.size) / (GBasMB) # rounding doesn't work
 HDDROUNDED = math.ceil(HDDTOTAL / 2.) * 2
 
-def ROUNDHDDTBORGB():
-	global HDDTBORGBOUTPUT
-	global HDDPRNT
-	if HDDROUNDED >= 1000:
-		HDDTBORGB = HDDROUNDED * .001
-		HDDTBORGBOUTPUT = str(HDDTBORGB) + "TB"
-		HDDPRNT = "HDD: " + str(HDDTBORGBOUTPUT)
-		print(HDDPRNT)
-	elif HDDROUNDED < 1000:
-		HDDTBORGBOUTPUT = str(str(HDDROUNDED) + "GB")
-		HDDPRNT = "HDD: " + str(HDDTBORGBOUTPUT)
-		print(HDDPRNT)
-	else:
-		print("!ERROR!")
+global HDDPRNT
+global HDDTBORGBOUTPUT
+if HDDROUNDED >= 1000:
+	HDDTBORGB = HDDROUNDED * .001
+	HDDTBORGBOUTPUT = str(HDDTBORGB) + "TB"
+	HDDPRNT = "HDD: " + str(HDDTBORGBOUTPUT)
+elif HDDROUNDED < 1000:
+	HDDTBORGBOUTPUT = str(str(HDDROUNDED) + "GB")
+	HDDPRNT = "HDD: " + str(HDDTBORGBOUTPUT)
 
-def CURRENTSPECS(): # Displays the end users raw input data for verification and accuracy of computers specs.
-	print("\r")
+#------------------------------- CraigsDetails for Log and listing info ---------------
+
+def COMPUTERDETAILS(): # Displays the end users raw input for verification and accuracy of listing details and contact info.
+	
 	global MODELPRNT
 	MODELPRNT = str("Model: " + MANUFACTURER + " " + MODEL)
-
+	
 	global RAMPRNT
 	RAMPRNT = str("RAM: " + str(RAMSTRROUNDED) + "GB")
-
+	
 	global CPUPRNT
 	CPUPRNT = str("CPU: " + CPUINFO.name)
-
+	
 	global OSPRNT
 	OSPRNT = str("OS: " + OSINFO.caption)
 	
+	print("\r")
 	print MODELPRNT
-	ROUNDHDDTBORGB()
+	print HDDPRNT
 	print RAMPRNT
 	print CPUPRNT
 	print OSPRNT
-
+	
 	global BODYSPECS
 	BODYSPECS = str(str(MODELPRNT) + str("\n") + str(HDDPRNT) + str("\n") + str(RAMPRNT) + str("\n") + str(CPUPRNT) + str("\n") + str(OSPRNT))
 
-	global LISTINGTITLE
-	LISTINGTITLE = str(MANUFACTURER) + " " + str(MODEL) + " (" + str(RAMSTRROUNDED) + "GB RAM, " + str(HDDTBORGBOUTPUT) + " HDD)"
-	
+# --------------------- Determine where the target computer will be listed ---------------------
+
 def WHEREAREWELISTING():
-	CURRENTSPECS()
 	print("\r")
 	WHATWEBSITE = "Do you want to list on Amazon [1], Ebay [2], or Craigslist [3]? \n"
 	ASKLISTING = raw_input(WHATWEBSITE)
 	LOWERASKLISTINGINPUT = str(ASKLISTING.lower())
 	
 	if LOWERASKLISTINGINPUT == "amazon" or LOWERASKLISTINGINPUT == str(1):
-		with open("amazon_listing_log", "a") as amazonlistings:
-			amazonlistings.write(BODYSPECS)
 		print("AMAZON")
 	elif LOWERASKLISTINGINPUT == "ebay" or LOWERASKLISTINGINPUT == str(2):
-		with open("ebay_listing_log", "a") as ebaylistings:
-			ebaylistings.write(BODYSPECS)
 		print("EBAY")
 	elif LOWERASKLISTINGINPUT == "craigslist" or LOWERASKLISTINGINPUT == str(3):
-		with open("craigslist_listing_log", "a") as craigslistlistings:
-			craigslistlistings.write(BODYSPECS)
 		CRAIGSLISTCOREFUNCTION()
 	else:
 		print(str(ASKLISTING) + " is not an option")
+		
+#---------------------------------------------------------------
 
-#------------------------------------ Craigslist Functions --------------------------------------------------
-
-def CRAIGSLISTDETAILS(): # Displays the end users raw input for verification and accuracy of listing details and contact info.
+def CRAIGSLISTCOREFUNCTION(): # Main processes involved in generating/posting a unique listing, from the above data, to Craigslist.
+	global LOGSEPERATION
+	LOGSEPERATION = "-------------------------------------"
+	
+	global LISTINGTITLE
+	LISTINGTITLE = str(MANUFACTURER) + " " + str(MODEL) + " (" + str(RAMSTRROUNDED) + "GB RAM, " + str(HDDTBORGBOUTPUT) + " HDD)"
+	
 	print("\r")
-	global LISTCONTACT
 	ASKCONTACT = "What contact name do you want listed? \n"
+	global LISTCONTACT
 	LISTCONTACT = raw_input(ASKCONTACT)
 	
 	print("\r")
-	global LISTINGEMAIL
 	ASKEMAIL = "What email contact email will you be using? \n"
+	global LISTINGEMAIL
 	LISTINGEMAIL = raw_input(ASKEMAIL)
 	
 	print("\r")
-	global PHONENUMBER
 	ASKNUMBA = "What telephone number do you want listed? \n"
+	global PHONENUMBER
 	PHONENUMBER = raw_input(ASKNUMBA)
 	
 	print("\r")
-	global PRICEDAT
 	ASKPRICE = "How much are you selling the computer for? \n"
+	global PRICEDAT
 	PRICEDAT = raw_input(ASKPRICE)
+	
 	print("\r")
 	print("Listing Name: " + LISTCONTACT)
 	print("Listing Email:" + LISTINGEMAIL)
 	print("Listing Phone Number: " + PHONENUMBER)
 	print("Listing Asking Price: $" + PRICEDAT)
 	print("Listing Title: " + LISTINGTITLE)
+	
+	with open("craigslist_listing_log", "a") as craigslistlistings:
+		craigslistlistings.write(str("\n"))
+		craigslistlistings.write(str(BODYSPECS) + str("\r\n"))
+		craigslistlistings.write(str("Listing Name: " + LISTCONTACT) + str("\n"))
+		craigslistlistings.write(str("Listing Email: " + LISTINGEMAIL) + str("\n"))
+		craigslistlistings.write(str("Listing Phone Number: " + PHONENUMBER) + str("\n"))
+		craigslistlistings.write(str("Listing Asking Price: $" + PRICEDAT) + str("\n"))
+		craigslistlistings.write(str("Listing Title: " + LISTINGTITLE) + str("\r"))
+		craigslistlistings.write(LOGSEPERATION)
 
-#------------------------ Selenium Webdriver Python Template for Auto Listing Craigslist -----------------------
 	global craigslist_selenium_python_webdriver_header
 	craigslist_selenium_python_webdriver_header = str('# -*- coding: utf-8 -*-'"\n"
 	'import time'"\n"
@@ -195,24 +203,20 @@ def CRAIGSLISTDETAILS(): # Displays the end users raw input for verification and
 	'if __name__ == "__main__":'"\n"
 	'	unittest.main()'"\n"
 	)
-
-#------------------------------------------------ Where all the magic happens and/or everything is executed --------------------------------
-
-def CRAIGSLISTCOREFUNCTION(): # Main processes involved in generating/posting a unique listing, from the above data, to Craigslist.
-	CRAIGSLISTDETAILS()
 	
 	header = craigslist_selenium_python_webdriver_header
 	body = craigslist_selenium_python_webdriver_body
 	footer = craigslist_selenium_python_webdriver_footer
 	
-	appendscript = open('Craigslist_Output.py', 'w')
+	craigslistoutputfilename = str('Craigslist Output '+MODEL+'.py')
+	appendscript = open(craigslistoutputfilename, 'w')
 	appendscript.write(header)
-	open('Craigslist_Output.py', 'wb')
+	open(craigslistoutputfilename, 'wb')
 	appendscript.write(body)
-	open('Craigslist_Output.py', 'w')
+	open(craigslistoutputfilename, 'w')
 	appendscript.write(footer)
-	
 	print('DONE.')
-	
+
+COMPUTERDETAILS()
 WHEREAREWELISTING()
 #----------------------------------- Amazon Functions --------------------------------------------------
