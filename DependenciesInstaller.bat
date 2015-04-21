@@ -13,4 +13,4 @@ chocolatey install pip -y
 chocolatey install pywin32 -y
 PAUSE
 
-start "%~dp0Dependencies Installer Two.bat"
+start "%~dp0DependenciesInstallerTwo.bat"
