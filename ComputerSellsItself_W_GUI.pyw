@@ -124,6 +124,9 @@ def CRAIGSLISTCOREFUNCTION(): # Main processes involved in generating/posting a 
 		craigslistlistings.write(str("Listing Title: " + LISTINGTITLE) + str("\r"))
 		craigslistlistings.write(LOGSEPERATION)
 
+	global stupidseleniumsyntax
+	stupidseleniumsyntax = str("'id'")
+	
 	global craigslist_selenium_python_webdriver_header
 	craigslist_selenium_python_webdriver_header = str('# -*- coding: utf-8 -*-'"\n"
 	'import time'"\n"
@@ -139,13 +142,17 @@ def CRAIGSLISTCOREFUNCTION(): # Main processes involved in generating/posting a 
 	'	def setUp(self):'"\n"
 	'		self.driver = webdriver.Firefox()'"\n"
 	'		self.driver.implicitly_wait(30)'"\n"
-	'		self.base_url = "https://post.craigslist.org/"'"\n"
+	'		self.base_url = "https://www.craigslist.org"'"\n"
 	'		self.verificationErrors = []'"\n"
 	'		self.accept_next_alert = True'"\n"
 	'	'"\n"
 	'	def test_pythonwebdriverselenium(self):'"\n"
 	'		driver = self.driver'"\n"
-	'		driver.get(self.base_url + "/k/DjV1fwDm5BG2R8qg6RDU3g/7qqew?s=edit")'"\n"
+	'		driver.get(self.base_url + "/")'"\n"
+	'		driver.find_element_by_css_selector("#postlks > li > #post").click()'"\n"
+	'		driver.find_element_by_xpath("(//input[@name=' + stupidseleniumsyntax + '])[6]").click()'"\n"
+	'		driver.find_element_by_xpath("(//input[@name=' + stupidseleniumsyntax + '])[20]").click()'"\n"
+	'		driver.find_element_by_name("n").click()'"\n"
 	'		driver.find_element_by_id("FromEMail").clear()'"\n"
 	'		driver.find_element_by_id("FromEMail").send_keys("' + LISTINGEMAIL + '")'"\n"
 	'		driver.find_element_by_id("ConfirmEMail").clear()'"\n"
