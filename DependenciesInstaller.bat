@@ -11,6 +11,3 @@ chocolatey install firefox -y
 chocolatey install python -version 2.7.2 -y
 chocolatey install pip -y
 chocolatey install pywin32 -y
-
-path "%~dp0"
-start DependenciesInstallerTwo.bat
