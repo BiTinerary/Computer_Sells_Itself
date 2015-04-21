@@ -13,7 +13,6 @@ chocolatey upgrade python -version 2.7.2 -y
 chocolatey install pip -y
 chocolatey install easy.install -y
 chocolatey install pywin32 -y
-pip install wmi
-pip install selenium -U
-
 PAUSE
+
+start "%~dp0Dependencies Installer Two.bat"
