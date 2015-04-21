@@ -9,9 +9,7 @@ setx PYTHON_PATH "%HOMEDRIVE%\Python27;%HOMEDRIVE%\\Python27\\Lib;%HOMEDRIVE%\\P
 
 chocolatey install firefox -y
 chocolatey install python -version 2.7.2 -y
-chocolatey upgrade python -version 2.7.2 -y
 chocolatey install pip -y
-chocolatey install easy.install -y
 chocolatey install pywin32 -y
 PAUSE
 
