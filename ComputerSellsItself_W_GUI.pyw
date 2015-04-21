@@ -1,7 +1,9 @@
 import os
 import wmi
 import math
-import time
+import easygui
+import subprocess
+from subprocess import call
 
 c = wmi.WMI()
 SYSINFO = c.Win32_ComputerSystem()[0]
@@ -65,49 +67,46 @@ def COMPUTERDETAILS(): # Displays the end users raw input for verification and a
 # --------------------- Determine where the target computer will be listed ---------------------
 
 def WHEREAREWELISTING():
+
 	print("\r")
-	WHATWEBSITE = "Do you want to list on Amazon [1], Ebay [2], or Craigslist [3]? \n"
-	ASKLISTING = raw_input(WHATWEBSITE)
-	LOWERASKLISTINGINPUT = str(ASKLISTING.lower())
+	amazongui = "Amazon"
+	ebaygui = "Ebay"
+	craigslistgui = "CraigsList"
 	
-	if LOWERASKLISTINGINPUT == "amazon" or LOWERASKLISTINGINPUT == str(1):
-		print("AMAZON")
-	elif LOWERASKLISTINGINPUT == "ebay" or LOWERASKLISTINGINPUT == str(2):
-		print("EBAY")
-	elif LOWERASKLISTINGINPUT == "craigslist" or LOWERASKLISTINGINPUT == str(3):
+	websitemsg = "Where are we going to list this computer?"
+	websitetitle = "Listing Location"
+	websiteguichoices = [amazongui, ebaygui, craigslistgui]
+	GUICHOSEN = easygui.buttonbox(websitemsg, websitetitle, websiteguichoices)
+	
+	if GUICHOSEN == amazongui:
+		print(amazongui)
+	if GUICHOSEN == ebaygui:
+		print(ebaygui)
+	if GUICHOSEN == craigslistgui:
 		CRAIGSLISTCOREFUNCTION()
-	else:
-		print(str(ASKLISTING) + " is not an option")
-		
 #---------------------------------------------------------------
 
 def CRAIGSLISTCOREFUNCTION(): # Main processes involved in generating/posting a unique listing, from the above data, to Craigslist.
 	global LOGSEPERATION
 	LOGSEPERATION = "-------------------------------------"
 	
+	listingguititle = "Posting to Craigslist"
+	listingguimsg = "These details will be posted publicly but you'll have an option to edit them later."
+	listingguichoices = ["Name: ", "Email: ", "Phone Number: ", "Asking Price: "]
+	LISTINGDETAILSGUI = []
+	LISTINGDETAILSGUI = easygui.multenterbox(listingguimsg, listingguititle, listingguichoices)
+	
+	guioutputarray = LISTINGDETAILSGUI
+	
+	for line in guioutputarray:
+		LISTCONTACT = guioutputarray[0]
+		LISTINGEMAIL = guioutputarray[1]
+		PHONENUMBER = guioutputarray[2]
+		PRICEDAT = guioutputarray[3]
+		
 	global LISTINGTITLE
 	LISTINGTITLE = str(MANUFACTURER) + " " + str(MODEL) + " (" + str(RAMSTRROUNDED) + "GB RAM, " + str(HDDTBORGBOUTPUT) + " HDD)"
-	
-	print("\r")
-	ASKCONTACT = "What contact name do you want listed? \n"
-	global LISTCONTACT
-	LISTCONTACT = raw_input(ASKCONTACT)
-	
-	print("\r")
-	ASKEMAIL = "What email contact email will you be using? \n"
-	global LISTINGEMAIL
-	LISTINGEMAIL = raw_input(ASKEMAIL)
-	
-	print("\r")
-	ASKNUMBA = "What telephone number do you want listed? \n"
-	global PHONENUMBER
-	PHONENUMBER = raw_input(ASKNUMBA)
-	
-	print("\r")
-	ASKPRICE = "How much are you selling the computer for? \n"
-	global PRICEDAT
-	PRICEDAT = raw_input(ASKPRICE)
-	
+
 	print("\r")
 	print("Listing Name: " + LISTCONTACT)
 	print("Listing Email:" + LISTINGEMAIL)
@@ -209,6 +208,7 @@ def CRAIGSLISTCOREFUNCTION(): # Main processes involved in generating/posting a 
 	body = craigslist_selenium_python_webdriver_body
 	footer = craigslist_selenium_python_webdriver_footer
 	
+	global craigslistoutputfilename
 	craigslistoutputfilename = str('Craigslist Output '+MODEL+'.py')
 	appendscript = open(craigslistoutputfilename, 'w')
 	appendscript.write(header)
@@ -220,7 +220,5 @@ def CRAIGSLISTCOREFUNCTION(): # Main processes involved in generating/posting a 
 
 COMPUTERDETAILS()
 WHEREAREWELISTING()
-time.sleep(15)
-import str('Craigslist Output '+MODEL+'.py')
-str('Craigslist Output '+MODEL+'.py')
+call(["python",(craigslistoutputfilename)])
 #----------------------------------- Amazon Functions --------------------------------------------------
