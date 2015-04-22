@@ -4,6 +4,7 @@ import math
 import easygui
 import subprocess
 from subprocess import call
+import PyInstaller.build
 
 c = wmi.WMI()
 SYSINFO = c.Win32_ComputerSystem()[0]
@@ -217,6 +218,8 @@ def CRAIGSLISTCOREFUNCTION(): # Main processes involved in generating/posting a 
 	
 	global craigslistoutputfilename
 	craigslistoutputfilename = str('Craigslist Output '+MODEL+'.py')
+	global craigslistoutputfileexe
+	craigslistoutputfileexe = str('Craigslist Output '+MODEL+'.exe')
 	appendscript = open(craigslistoutputfilename, 'w')
 	appendscript.write(header)
 	open(craigslistoutputfilename, 'wb')
@@ -227,5 +230,8 @@ def CRAIGSLISTCOREFUNCTION(): # Main processes involved in generating/posting a 
 
 COMPUTERDETAILS()
 WHEREAREWELISTING()
-call(["python",(craigslistoutputfilename)])
+os.system("cd %~dp0/App/")
+os.system("python %~dp0/PyInstaller/Pyinstaller.py --onefile %~dp0/" + craigslistoutputfilename)
+os.system("python %~dp0/PyInstaller/dist/" + craigslistoutputfileexe)
+#call(["python",(craigslistoutputfileexe)])
 #----------------------------------- Amazon Functions --------------------------------------------------
