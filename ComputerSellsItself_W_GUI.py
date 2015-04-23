@@ -1,6 +1,7 @@
 import os
 import wmi
 import math
+import time
 import easygui
 import subprocess
 from subprocess import call
@@ -230,8 +231,10 @@ def CRAIGSLISTCOREFUNCTION(): # Main processes involved in generating/posting a 
 	
 COMPUTERDETAILS()
 WHEREAREWELISTING()
-os.system("cd %cd%App")
-os.system("python %cd:~0,2%PyInstaller/Pyinstaller.py --onefile %cd:~0,2%" + '"' + craigslistoutputfilename + '"')
-os.system("%cd:~0,2%/dist/" + '"' + craigslistoutputfileexe + '"')
+os.system("cd  %cd:~0,2%App")
+time.sleep(15)
+os.system("python %cd:~0,2%PyInstaller/pyinstaller.py --onefile %cd:~0,2%" + '"' + craigslistoutputfilename + '"')
+time.sleep(15)
+os.system("%cd:~0,2%dist/" + '"' + craigslistoutputfileexe + '"')
 #call(["python",(craigslistoutputfileexe)])
 #----------------------------------- Amazon Functions --------------------------------------------------
