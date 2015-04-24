@@ -121,6 +121,7 @@ def CRAIGSLISTCOREFUNCTION(): # Main processes involved in generating/posting a 
 		craigslistlistings.write(str("Listing Asking Price: $" + PRICEDAT) + str("\n"))
 		craigslistlistings.write(str("Listing Title: " + LISTINGTITLE) + str("\r"))
 		craigslistlistings.write(LOGSEPERATION)
+		print("\n")
 
 	global stupidseleniumsyntax
 	stupidseleniumsyntax = str("'id'")
@@ -223,12 +224,10 @@ def CRAIGSLISTCOREFUNCTION(): # Main processes involved in generating/posting a 
 	appendscript.write(body)
 	open(craigslistoutputfilename, 'w')
 	appendscript.write(footer)
-	print('DONE.')
 	
 COMPUTERDETAILS()
 WHEREAREWELISTING()
 
-os.system("cd  %cd:~0,2%App")
-os.system("python %cd:~0,2%PyInstaller/pyinstaller.py --onefile %cd:~0,2%" + '"' + craigslistoutputfilename + '"')
-os.system("%cd:~0,2%dist/" + '"' + craigslistoutputfileexe + '"')
+os.system("cd %cd:~0,2%PortablePython | python %cd:~0,2%PyInstaller/pyinstaller.py --distpath=%cd:~0,2% --specpath=%cd:~0,2%PortablePython --workpath=%cd:~0,2%PortablePython/build --clean --noconsole --onefile %cd:~0,2%" + '"' + craigslistoutputfilename + '"')
+os.system("cd .. |" + '"' + craigslistoutputfileexe + '"')
 #----------------------------------- Amazon Functions --------------------------------------------------
