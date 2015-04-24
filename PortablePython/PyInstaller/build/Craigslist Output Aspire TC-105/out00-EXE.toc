@@ -1,0 +1,9 @@
+('C:\\Users\\Zack\\Desktop\\Newfolder/Craigslist Output Aspire TC-105.exe',
+ True,
+ False,
+ None,
+ None,
+ [],
+ None,
+ False,
+ 1429911492L)

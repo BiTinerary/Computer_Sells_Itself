@@ -218,16 +218,20 @@ def CRAIGSLISTCOREFUNCTION(): # Main processes involved in generating/posting a 
 	craigslistoutputfilename = str('Craigslist Output '+MODEL+'.py')
 	global craigslistoutputfileexe
 	craigslistoutputfileexe = str('Craigslist Output '+MODEL+'.exe')
+	
 	appendscript = open(craigslistoutputfilename, 'w')
 	appendscript.write(header)
+	
 	open(craigslistoutputfilename, 'wb')
 	appendscript.write(body)
+	
 	open(craigslistoutputfilename, 'w')
 	appendscript.write(footer)
 	
 COMPUTERDETAILS()
 WHEREAREWELISTING()
 
-os.system("cd %cd:~0,2%PortablePython | python %cd:~0,2%PyInstaller/pyinstaller.py --distpath=%cd:~0,2% --specpath=%cd:~0,2%PortablePython --workpath=%cd:~0,2%PortablePython/build --clean --noconsole --onefile %cd:~0,2%" + '"' + craigslistoutputfilename + '"')
-os.system("cd .. |" + '"' + craigslistoutputfileexe + '"')
+os.system("cd %CD%/PortablePython")
+os.system("python %CD%/PortablePython/PyInstaller/pyinstaller.py --distpath=%CD%/ --specpath=%CD%/PortablePython/PyInstaller/ --workpath=%CD%/PortablePython/PyInstaller/build --clean --onefile %CD%/" + '"' + craigslistoutputfilename + '"')
+os.system("%CD%/" + '"' + craigslistoutputfileexe + '"')
 #----------------------------------- Amazon Functions --------------------------------------------------

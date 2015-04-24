@@ -1,9 +1,0 @@
-('C:Craigslist Output Aspire TC-105.exe',
- False,
- False,
- None,
- None,
- [],
- None,
- False,
- 1429897076L)
